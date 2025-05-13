@@ -26,8 +26,15 @@
             flutter-version: '3.22.2'
             channel: 'stable'
 
+        - name: Upgrade Dependencies
+          run: flutter pub upgrade --major-versions
+
         - name: Install Dependencies
           run: flutter pub get
+
+        # - name: Decode Keystore
+        #   run: |
+        #     echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > android/app/my-release-key.jks
 
         - name: Build APK
           run: flutter build apk --release
@@ -41,5 +48,5 @@
             files: |
               build/app/outputs/flutter-apk/app-release.apk
               build/app/outputs/bundle/release/app-release.aab
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # env:
+          #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
