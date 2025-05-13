@@ -36,11 +36,17 @@
         #   run: |
         #     echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > android/app/my-release-key.jks
 
+        # - name: Build APK
+        #   run: flutter build apk --release
+
+        # - name: Build App Bundle
+        #   run: flutter build appbundle --release
+
         - name: Build APK
-          run: flutter build apk --release
+          run: flutter build apk --release -t lib/main_dev.dart
 
         - name: Build App Bundle
-          run: flutter build appbundle --release
+          run: flutter build appbundle --release -t lib/main_dev.dart
 
         - name: Upload Release Assets
           uses: softprops/action-gh-release@v1
