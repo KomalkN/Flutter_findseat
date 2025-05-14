@@ -42,9 +42,9 @@
         # - name: Build App Bundle
         #   run: flutter build appbundle --release
 
-        - name: Clean Gradle
-          run: ./gradlew clean
-          working-directory: android
+        # - name: Clean Gradle
+        #   run: ./gradlew clean
+        #   working-directory: android
 
         - name: Build APK
           run: flutter build apk --release -t lib/main_dev.dart
