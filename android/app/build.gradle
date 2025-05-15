@@ -1,9 +1,9 @@
-plugins {
-    id "com.android.application"
-    id "org.jetbrains.kotlin.android"
-    id "com.google.gms.google-services" // only if you're using Firebase
-    id "dev.flutter.flutter-gradle-plugin"  version '1.0.0'
-}
+// plugins {
+//     id "com.android.application"
+//     id "org.jetbrains.kotlin.android"
+//     id "com.google.gms.google-services" // only if you're using Firebase
+//     id "dev.flutter.flutter-gradle-plugin"  version '1.0.0'
+// }
 
 
 
@@ -30,8 +30,8 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
-// apply plugin: 'com.android.application'
-// apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply plugin: 'com.android.application'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
     compileSdkVersion 35
@@ -75,4 +75,4 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-// apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.gms.google-services'
