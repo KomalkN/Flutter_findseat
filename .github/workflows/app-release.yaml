@@ -26,6 +26,9 @@
             flutter-version: '3.22.2'
             channel: 'stable'
 
+        - name: Flutter Clean
+          run: flutter clean
+
         - name: Upgrade Dependencies
           run: flutter pub upgrade --major-versions
 
