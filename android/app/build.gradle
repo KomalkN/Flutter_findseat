@@ -24,6 +24,13 @@ if (flutterVersionName == null) {
 // apply plugin: 'com.android.application'
 // apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
+plugins {
+    id "com.android.application"
+    id "org.jetbrains.kotlin.android"
+    id "com.google.gms.google-services" // only if you're using Firebase
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
 android {
     compileSdkVersion 35
 
@@ -67,11 +74,3 @@ dependencies {
 }
 
 // apply plugin: 'com.google.gms.google-services'
-
-plugins {
-    id "com.android.application"
-    id "org.jetbrains.kotlin.android"
-    id "com.google.gms.google-services" // only if you're using Firebase
-    id "dev.flutter.flutter-gradle-plugin"
-}
-
